@@ -58,46 +58,7 @@ const [page, setPage] = useState(1);
 
   return (
     <>
-      {/* <MainContainer>
-        <CatalogContainer>
-          <FiltersForm
-            setPage={setPage}
-            searchParams={searchParams}
-            setSearchParams={setSearchParams}
-          />
-
-          <ListBtnWrap id="advertBlock">
-            {page > 1 && (
-              <GoToPrevPageBtn
-                id="goBack"
-                type="button"
-                onClick={handleGoToPrevPage}
-              >
-                <FaArrowLeft size={20} fill="var(--text-color)" />
-                Go back
-              </GoToPrevPageBtn>
-            )}
-            {adverts.length < 0 || error === "Not found" ? (
-              <NoItemsMsg>No items</NoItemsMsg>
-            ) : (
-              <AdvertsList>
-                {adverts.map((card) => (
-                  <CardItem key={card._id}>
-                    <AdvertCard card={card} />
-                  </CardItem>
-                ))}
-              </AdvertsList>
-            )}
-
-            {showLoadMore && !error && adverts.length > 0 && (
-              <LoadMoreBtn type="button" onClick={handleLoadMore}>
-                Load more
-              </LoadMoreBtn>
-            )}
-          </ListBtnWrap>
-        </CatalogContainer>
-      </MainContainer> */}
-          <Container>
+             <Container>
               <CatalogContainer>
                    <Filters
             setPage={setPage}
@@ -111,7 +72,7 @@ const [page, setPage] = useState(1);
                 type="button"
                 onClick={handleGoToPrevPage}
               >
-                <FaArrowLeft size={20} fill="var(--text-color)" />
+                <FaArrowLeft size={20} fill="var(--light-text)" />
                 Go back
               </GoToPrevPageBtn>
             )}

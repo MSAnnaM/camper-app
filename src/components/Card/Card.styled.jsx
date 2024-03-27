@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
-const TitlesStyles = css`
-  color: var(--text-color);
+const Titles = css`
+  color: var(--main-text);
   font-size: 16px;
   font-weight: 600;
 
@@ -23,7 +23,7 @@ export const RedButton = css`
   max-width: 140px;
   border-radius: 200px;
   padding: 16px 0;
-  background-color: var(--accent-red);
+  background-color: var(--accent-color);
   color: var(--white);
 
   @media screen and (min-width: 1440px) {
@@ -34,7 +34,7 @@ export const RedButton = css`
 
     &:hover,
     &:focus {
-      background-color: var(--red-hover);
+      background-color: var(--accent-hover);
     }
   }
 `;
@@ -70,7 +70,7 @@ export const CardItem = styled.li`
   border-radius: 20px;
   border: 1px solid var(--border-color);
   padding: 15px;
-  background-color: var(--contrast);
+  background-color: var(--bg-color);
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -122,7 +122,7 @@ export const TitlePriceWrap = styled.div`
 `;
 
 export const Title = styled.p`
-  ${TitlesStyles}
+  ${Titles}
   margin-bottom: 5px;
 `;
 
@@ -134,24 +134,24 @@ export const PriceWrap = styled.div`
 export const AddToFavBtn = styled.button`
   svg {
     fill: ${({ $isFavorite }) =>
-      $isFavorite ? "var(--accent-red)" : "transparent"};
+      $isFavorite ? "var(--accent-color)" : "transparent"};
     stroke: ${({ $isFavorite }) =>
-      $isFavorite ? "none" : "var(--text-color)"};
+      $isFavorite ? "none" : "var(--main-text)"};
     transition: fill var(--cubic-transition);
   }
 
   @media screen and (min-width: 1440px) {
     &:hover svg {
       fill: ${({ $isFavorite }) =>
-        $isFavorite ? "transparent" : "var(--accent-red)"};
+        $isFavorite ? "transparent" : "var(--accent-color)"};
       stroke: ${({ $isFavorite }) =>
-        $isFavorite ? "var(--text-color)" : "var(--accent-red)"};
+        $isFavorite ? "var(--main-text)" : "var(--accent-color)"};
     }
   }
 `;
 
 export const Price = styled.p`
-  ${TitlesStyles}
+  ${Titles}
 `;
 
 export const RatingLocationWrap = styled.div`
@@ -168,13 +168,13 @@ export const RatingWrap = styled.div`
   gap: 5px;
 
   button {
-    color: var(--text-color);
+    color: var(--main-text);
     text-decoration: underline;
     cursor: pointer;
     transition: color var(--linear-transition);
 
     &:hover {
-      color: var(--accent-orange);
+      color: var(--rating-color);
     }
   }
 `;
@@ -185,7 +185,7 @@ export const LocationWrap = styled.div`
 
   svg {
     fill: none;
-    stroke: var(--text-color);
+    stroke: var(--main-text);
   }
 `;
 
@@ -209,8 +209,8 @@ export const DetailsList = styled.ul`
     font-weight: 500;
     border-radius: 100px;
     padding: 10px 20px;
-    color: var(--text-color);
-    background-color: var(--grey);
+    color: var(--main-text);
+    background-color: var(--features-color);
 
     &.capitalize {
       text-transform: capitalize;
@@ -242,7 +242,7 @@ export const LoadMoreBtn = styled.button`
   @media screen and (min-width: 1440px) {
     &:hover,
     &:focus {
-      border-color: var(--accent-red);
+      border-color: var(--accent-color);
     }
   }
 `;
@@ -252,7 +252,7 @@ export const NoItemsMsg = styled.div`
   font-weight: 600;
   line-height: 1.25;
   text-align: center;
-  color: var(--text-color);
+  color: var(--main-text);
   margin-top: 50px;
 
   &.favs {
@@ -276,5 +276,5 @@ export const GoToCatalogLink = styled(Link)`
   align-items: center;
   justify-content: center;
   gap: 7px;
-  color: var(--accent-red);
+  color: var(--accent-color);
 `;

@@ -1,9 +1,9 @@
-// import { useState, useMemo } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { addToFavorites, removeFromFavorites } from "../../redux/adverts/slice";
-import { PiWind } from "react-icons/pi";
-// import { selectFavorites } from "../../redux/adverts/selectors";
-// import Modal from "components/Modal";
+import { useState, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToFavorites, removeFromFavorites } from '../../redux/camperSlice';
+import { PiWind } from 'react-icons/pi';
+import { selectFavorites } from '../../redux/camperSelectors';
+import { Modal } from '../Modal/Modal';
 import {
   StarIcon,
   PinIcon,
@@ -13,7 +13,7 @@ import {
   PetrolIcon,
   TransmissionIcon,
   FavIcon,
-} from "../Icons/AllIcons";
+} from '../Icons/AllIcons';
 import {
   VanPic,
   MainInfoWrap,
@@ -28,39 +28,43 @@ import {
   DetailsList,
   ShowBtn,
   AddToFavBtn,
-} from "./Card.styled";
+} from './Card.styled';
 
 const AdvertCard = ({ card }) => {
-  // const [isModalShown, setIsModalShown] = useState(false);
-  // const [activeTab, setActiveTab] = useState("features");
-  // const [clickToReviews, setClickToReviews] = useState(false);
+  const [isModalShown, setIsModalShown] = useState(false);
+  const [activeLink, setActiveLink] = useState('features');
+  const [clickToReviews, setClickToReviews] = useState(false);
 
-  // const dispatch = useDispatch();
-  // const favorites = useSelector(selectFavorites);
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
 
-  // const isCardFavorite = useMemo(
-  //   () => favorites.find((fav) => fav._id === card._id),
-  //   [favorites, card._id]
-  // );
+  const closeModal = () => {
+    setIsModalShown(false);
+    document.body.style.overflow = "visible";
+};
+  const isFavorite = useMemo(
+    () => favorites.find(fav => fav._id === card._id),
+    [favorites, card._id]
+  );
 
-  // const openReviews = () => {
-  //   setIsModalShown(true);
-  //   document.body.style.overflow = "hidden";
-  //   setActiveTab("reviews");
-  //   setClickToReviews(true);
-  // };
+  const openReviews = () => {
+    setIsModalShown(true);
+    document.body.style.overflow = 'hidden';
+    setActiveLink('reviews');
+    setClickToReviews(true);
+  };
 
-  // const openAdvertsModal = () => {
-  //   setClickToReviews(false);
-  //   setIsModalShown(true);
-  //   document.body.style.overflow = "hidden";
-  // };
+  const openCardModal = () => {
+    setClickToReviews(false);
+    setIsModalShown(true);
+    document.body.style.overflow = 'hidden';
+  };
 
-  // const addAdvertToFavorites = () => {
-  //   isCardFavorite
-  //     ? dispatch(removeFromFavorites(card._id))
-  //     : dispatch(addToFavorites(card));
-  // };
+  const addCardToFavorites = () => {
+    isFavorite
+      ? dispatch(removeFromFavorites(card._id))
+      : dispatch(addToFavorites(card));
+  };
 
   return (
     <>
@@ -77,8 +81,8 @@ const AdvertCard = ({ card }) => {
             <AddToFavBtn
               type="button"
               aria-label="Add to favorites"
-              // onClick={addAdvertToFavorites}
-              // $isFavorite={!!isCardFavorite}
+              onClick={addCardToFavorites}
+              $isFavorite={!!isFavorite}
             >
               <FavIcon width={20} height={20} />
             </AddToFavBtn>
@@ -90,12 +94,12 @@ const AdvertCard = ({ card }) => {
             <StarIcon
               width={20}
               height={20}
-              fillColor={"var(--accent-orange)"}
+              fillColor={'var(--rating-color)'}
             />
             <button
               type="button"
               aria-label="Open reviews"
-              // onClick={openReviews}
+              onClick={openReviews}
             >
               {`${card.rating}(${card.reviews.length} Reviews)`}
             </button>
@@ -103,7 +107,7 @@ const AdvertCard = ({ card }) => {
 
           <LocationWrap>
             <PinIcon width={20} height={20} />
-            <p>{card.location.split(",").reverse().join(", ")}</p>
+            <p>{card.location.split(',').reverse().join(', ')}</p>
           </LocationWrap>
         </RatingLocationWrap>
 
@@ -139,7 +143,7 @@ const AdvertCard = ({ card }) => {
 
           {card.airConditioner >= 1 && (
             <li>
-              <PiWind size={20} style={{ fill: "var(--text-color)" }} />
+              <PiWind size={20} style={{ fill: 'var(--main-text)' }} />
               AC
             </li>
           )}
@@ -148,21 +152,22 @@ const AdvertCard = ({ card }) => {
         <ShowBtn
           type="button"
           aria-label="Show more details"
-          // onClick={openAdvertsModal}
+          onClick={openCardModal}
         >
           Show more
         </ShowBtn>
       </MainInfoWrap>
 
-      {/* {isModalShown && (
+      {isModalShown && (
         <Modal
           card={card}
-          closeModal={() => setIsModalShown(false)}
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-          clickToReviews={clickToReviews}
+          isModalShown={isModalShown}
+          closeModal={closeModal}
+          activeLink={activeLink}
+          setActiveLink={setActiveLink}
+          clickReviews={clickToReviews}
         />
-      )} */}
+      )}
     </>
   );
 };

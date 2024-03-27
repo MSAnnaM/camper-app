@@ -16,7 +16,7 @@ const commonRadioCheckbox = css`
   border-radius: 10px;
   border: 1px solid var(--border-color);
   padding: 10px;
-  color: var(--text-color);
+  color: var(--main-text);
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
@@ -72,13 +72,13 @@ export const LabelLocation = styled.label`
     top: 45px;
     left: 15px;
     fill: none;
-    stroke: var(--text-color);
+    stroke: var(--main-text);
   }
 
   .react-dropdown-select {
     width: 100%;
   padding: 18px;
-  background-color: var(--input-background);
+  background-color: var(--input-color);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.25;
@@ -103,7 +103,7 @@ export const LabelLocation = styled.label`
     transition: box-shadow var(--linear-transition);
 
     &:focus-within {
-      box-shadow: 0 0 5px var(--accent-red);
+      box-shadow: 0 0 5px var(--accent-color);
     }
 
     svg {
@@ -113,26 +113,26 @@ export const LabelLocation = styled.label`
 
   .react-dropdown-select-dropdown {
     width: 100%;
-    background-color: var(--input-background);
+    background-color: var(--input-color);
     border-radius: 10px;
-    border: 2px solid var(--accent-red);
+    border: 2px solid var(--accent-color);
   }
 
   .react-dropdown-select-item {
     border-bottom: 1px solid var(--light-text);
 
     &:hover:not(.react-dropdown-select-item-selected) {
-      color: var(--white);
-      background-color: var(--accent-red);
+      color: var(--bg-color);
+      background-color: var(--accent-color);
       opacity: 0.7;
     }
   }
 
   .react-dropdown-select-item.react-dropdown-select-item-selected,
   .react-dropdown-select-item.react-dropdown-select-item-active {
-    color: var(--white);
+    color: var(--bg-color);
     font-weight: bold;
-    background-color: var(--accent-red);
+    background-color: var(--accent-color);
   }
 `;
 
@@ -149,7 +149,7 @@ export const LabelFilters = styled.label`
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
-  color: var(--text-color);
+  color: var(--main-text);
 
   hr {
     opacity: 0.3;
@@ -194,7 +194,7 @@ export const InputWrap = styled.div`
     cursor: pointer;
 
     &:checked + div {
-      border-color: var(--accent-red);
+      border-color: var(--accent-color);
     }
   }
 `;
