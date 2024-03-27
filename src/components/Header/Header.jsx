@@ -1,6 +1,7 @@
 import { FaHome } from 'react-icons/fa';
 import { MdLocalOffer } from 'react-icons/md';
 import { AiOutlineHeart } from 'react-icons/ai';
+
 import {
   HeaderContainer,
   Nav,

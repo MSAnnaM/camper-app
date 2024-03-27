@@ -28,5 +28,10 @@ export const Nav = styled.nav`
 
 export const NavigationLink = styled(NavLink)`
   color: var(--text-color);
+  &.active {
+    svg {
+      fill: var(--accent-color);
+      stroke: var(--accent-color);
+    }
   }
 `;
