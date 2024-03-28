@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/camper-app/static/css/main.7ed5c1f5.css",
-    "main.js": "/camper-app/static/js/main.74953480.js",
+    "main.js": "/camper-app/static/js/main.6930036b.js",
     "static/js/579.47650f1c.chunk.js": "/camper-app/static/js/579.47650f1c.chunk.js",
     "static/css/550.c96e58de.chunk.css": "/camper-app/static/css/550.c96e58de.chunk.css",
     "static/js/550.6405a088.chunk.js": "/camper-app/static/js/550.6405a088.chunk.js",
@@ -21,7 +21,7 @@
     "static/media/sprite.svg": "/camper-app/static/media/sprite.41970d08ad9c01ba001e0213692df83a.svg",
     "index.html": "/camper-app/index.html",
     "main.7ed5c1f5.css.map": "/camper-app/static/css/main.7ed5c1f5.css.map",
-    "main.74953480.js.map": "/camper-app/static/js/main.74953480.js.map",
+    "main.6930036b.js.map": "/camper-app/static/js/main.6930036b.js.map",
     "579.47650f1c.chunk.js.map": "/camper-app/static/js/579.47650f1c.chunk.js.map",
     "550.c96e58de.chunk.css.map": "/camper-app/static/css/550.c96e58de.chunk.css.map",
     "550.6405a088.chunk.js.map": "/camper-app/static/js/550.6405a088.chunk.js.map",
@@ -34,6 +34,6 @@
   },
   "entrypoints": [
     "static/css/main.7ed5c1f5.css",
-    "static/js/main.74953480.js"
+    "static/js/main.6930036b.js"
   ]
 }
