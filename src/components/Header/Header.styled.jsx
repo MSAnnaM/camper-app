@@ -17,6 +17,14 @@ export const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
+
+  span {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: inline-block;
+    }
+  }
 `;
 export const Nav = styled.nav`
   ul {
